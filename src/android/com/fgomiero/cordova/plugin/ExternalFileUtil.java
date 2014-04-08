@@ -3,11 +3,13 @@
  */
 package com.fgomiero.cordova.plugin;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URLConnection;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CordovaResourceApi;
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -51,7 +53,7 @@ public class ExternalFileUtil extends CordovaPlugin {
 		final Uri uri = resourceApi.remapUri(tmpTarget.getScheme() != null ? tmpTarget : Uri.fromFile(new File(url)));
 
 		final String mime = URLConnection.guessContentTypeFromName(uri.toString());
-		intent = new Intent(Intent.ACTION_VIEW);
+		Intent intent = new Intent(Intent.ACTION_VIEW);
 		intent.setDataAndType(uri, mime);
 
 		this.cordova.getActivity().startActivity(intent);
