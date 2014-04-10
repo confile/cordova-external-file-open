@@ -20,6 +20,7 @@
 
 #import "FGExternalFileUtil.h"
 #import <Cordova/CDV.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @implementation FGExternalFileUtil
 
