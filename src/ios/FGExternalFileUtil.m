@@ -31,8 +31,6 @@
 
     NSString *path = [command.arguments objectAtIndex:0];
 
-    NSLog(@"path %@, uti:%@", path, uti);
-
     NSFileManager *fileManager = [NSFileManager defaultManager];
     BOOL fileExists = [fileManager fileExistsAtPath:path];
 
