@@ -56,7 +56,7 @@
 
     // Get file again from Documents directory
     NSURL *fileURL = [NSURL fileURLWithPath:localFile];
-    CFStringRef ext = (CFStringRef) [localFile pathExtension];
+    CFStringRef ext = (__bridge CFStringRef) [localFile pathExtension];
     NSString *uti = (__bridge NSString *)UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, ext, NULL);
 
 	self.docController = [UIDocumentInteractionController interactionControllerWithURL:fileURL];
